@@ -2,24 +2,24 @@ syntax = "proto3";
 
 // Serviços
 service TaskService {
-   rpc FindAll(Empty) returns(TaskList) { }
-   rpc InsertOne(Task) returns(Task) { }
-   rpc FindOne(TaskResquest) returns(Taks) { }
-   rpc DeleteOne(Task) returns(Taks) { }
+  rpc FindAll(Empty) returns (TaskList);
+  rpc InsertOne(Task) returns (Task);
+  rpc FindOne(TaskRequest) returns (Task);
+  rpc DeleteOne(Task) returns (Task);
 }
 
 // Mensagens 
-mensage Empty{ }
+message Empty {}
 
-mensage Task {
-    int32 id = 1
-    string title = 2
+message Task {
+  int32 id = 1;
+  string title = 2;
 }
 
-mensage TaskList{
-  repeated Task tasks = 1
+message TaskList {
+  repeated Task tasks = 1;
 }
 
-mensage TaskResquest{
-    int32 id = 1
+message TaskRequest {
+  int32 id = 1;
 }

@@ -8,7 +8,7 @@ import {
 } from "@grpc/grpc-js";
 
 // Carregar definição proto
-const tasksDefs = loadSync("./task.proto");
+const tasksDefs = loadSync("./tasks.proto");
 const taskProto = loadPackageDefinition(tasksDefs) as any;
 
 type Task = { id: number; title: string };
@@ -74,7 +74,6 @@ grpcServer.bindAsync(
   "0.0.0.0:50051",
   ServerCredentials.createInsecure(),
   () => {
-    grpcServer.start();
     console.log("gRPC server running at http://localhost:50051");
   }
 );
